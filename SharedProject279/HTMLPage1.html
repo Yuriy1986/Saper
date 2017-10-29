@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Сапер</title>
+    <script src="javascript1.js"></script>
+    <link href="stylesheet1.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="Images/logo.jpg" type="image/x-icon" />
+    <!--<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="angular.min.js"></script>
+
+    <link href="dialog/jquery-ui.css" rel="stylesheet" />   
+    <script src="dialog/jquery-ui.js"></script>             
+
+    <script>
+        $(function () {     //using ui
+            $("#dialog").dialog();
+            $("button").button();
+        });
+    </script>
+
+</head>
+<body style="margin:0">
+    <button id="restartSaper">ПЕРЕЗАПУСК</button>
+    <button id="time" accesskey="p">Время</button>    <!--Pause alt+p-->
+    <script>
+        restartSaper.onclick =
+        function () {
+            window.location.reload();
+        }
+
+        time.onclick =
+        function () {
+            alert('Пауза');
+        }
+    </script>
+    <button id="mine">Мины</button>
+
+    <div id="dialog" title="Настройки игры:" ng-app="myApp" ng-controller="control">
+        <p>
+            <label for="row">Количество рядов </label><input id="row" ng-model="frow" class="spinner" type="number" min="4" max="100" 
+                                                             step="1" title="Количество рядов (от 4 до 100)">
+        </p>
+
+        <p>
+            <label for="col">Количество столбцов </label><input id="col" ng-model="fcol" class="spinner" type="number" min="4" max="100" 
+                                                                step="1" title="Количество столбцов (от 4 до 100)">
+        </p>
+
+        <p>
+            <label for="w">Ширина кнопки </label><input id="w" ng-model="fw" class="spinner" type="number" min="20" max="100" 
+                                                        step="1" title="Ширина кнопки (от 20 до 100)">
+        </p>
+
+        <p>
+            <label for="h">Высота кнопки </label><input id="h" ng-model="fh" class="spinner" type="number" min="20" max="100" 
+                                                        step="1" title="Высота кнопки (от 20 до 100)">
+        </p>
+
+        <p>
+            <label for="level">Уровень сложности </label>
+            <select id="level" ng-model="flevel" class="ui-selectmenu-button ui-button ui-widget ui-selectmenu-button-open ui-corner-top">
+                <option id="newone" value="1">Новичок</option>
+                <option id="middle" value="2"> Любитель</option>
+                <option id="prof" value="3">Профессионал</option>
+            </select>
+        </p>
+
+        <button id="button"  ng-click="start()">Запуск</button>
+
+        <script>
+            row.onchange =
+                function () { input('row', 4, 100); }
+            col.onchange =
+                function () { input('col', 4, 100); }
+            w.onchange =
+                function () { input('w', 20, 100); }
+            h.onchange =
+                function () { input('h', 20, 100); }
+
+            function input(name, min, max) {
+                if ($("#" + name).val() < min) {
+                    $("#" + name).val(min);
+                    alert($("#" + name).attr('title'));
+                }
+                if ($("#" + name).val() > max) {
+                    $("#" + name).val(max);
+                    alert($("#" + name).attr('title'));
+                }
+            }
+        </script>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('control', function ($scope) {
+            var check = true;
+            $("#dialog").dialog({   //before closing
+                beforeClose: function () {
+                    if(check)
+                    window.close();
+                }
+            });
+            $scope.frow = 10;
+            $scope.fcol = 10;
+            $scope.fw = 40;
+            $scope.fh = 40;
+            $scope.flevel = "1"; 
+
+            $scope.start = function () {
+                check = false;
+
+                var g = new Saper($scope.frow, $scope.fcol, $scope.fw, $scope.fh, $scope.flevel);
+                $("#dialog").dialog("close");
+                g.startGame();
+
+                $("#restartSaper, #time, #mine").css({
+                    "display": "block"
+                });
+            }
+        });
+    </script>
+</body>
+</html>

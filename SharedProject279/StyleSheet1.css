@@ -1,0 +1,49 @@
+﻿#canv {
+    position:absolute;
+    border: 5px solid yellow;
+    border-radius:25px;
+    background-color:darkviolet;
+}
+
+.but{
+    position:absolute;
+    border: 1px solid red;
+    border-radius:5px;
+    background-color:aquamarine;
+}
+
+.spinner{
+    position:absolute;
+    left:230px;
+    width:50px;
+}
+
+#restartSaper, #time, #mine{
+    display:none;
+}
+
+#restartSaper
+{
+    /*display:none;*/
+    margin-left:auto;
+    margin-right:auto;    
+}
+
+#time{
+    position:absolute;
+    top:0;
+    left:0;
+    /*display:none;*/
+}
+
+#mine{
+    position:absolute;
+    top:0;
+    right:0;
+    /*display:none;*/   
+}
+
+#level
+{       
+    width:265px;
+}

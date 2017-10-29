@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9a054ca3-2833-403a-aeef-217bef168a88</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SharedProject279</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Dialog\jquery-ui.css" />
+    <Content Include="$(MSBuildThisFileDirectory)HTMLPage1.html" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\fire(lose).gif" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\flag.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\logo.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\mineBlack.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\mineError.jpg" />
+    <Content Include="$(MSBuildThisFileDirectory)StyleSheet1.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Dialog\jquery-ui.js" />
+    <None Include="$(MSBuildThisFileDirectory)JavaScript1.js" />
+  </ItemGroup>
+</Project>
