@@ -99,7 +99,7 @@
         var app = angular.module('myApp', []);
         app.controller('control', function ($scope) {
             var check = true;
-            $("#dialog").dialog({   //before closing
+            $("#dialog").dialog({  
                 beforeClose: function () {
                     if(check)
                     window.close();
